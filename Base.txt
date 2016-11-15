@@ -1,0 +1,29 @@
+﻿
+以下目录在build Xcode 时出错，需要删除删除
+
+1. /Users/jerryzhou/Library/Developer/Xcode/DerivedData 
+2. /tmp/Build/Products
+3. /tmp/Build/Intermediates
+
+
+其他前置工作：
+brew update 
+brew uninstall mogenerator
+brew install mogenerator
+
+sudo gem install cocoapods
+
+安装carthage 可以用官网的下载安装包，安装包比较新
+brew install carthage  
+https://github.com/Carthage/Carthage/releases
+
+Delete Carthage folder in root folder
+
+Run Carthage command for the first time
+carthage bootstrap --platform ios --use-submodules --no-use-binaries
+carthage bootstrap --platform ios --use-submodules --no-use-binaries --no-build 
+应该跑前者，因为第一次需要build
+
+cd ****** 
+pod install 
+git submodule update --init --recursive
